@@ -1,12 +1,14 @@
 import sys
+from connection import Connection
 
 class Node:
 
     def __init__(self, name, json_file):
         self.name = name
         self.population = 0
-        self.load_json_file(json_file)
+        self.load(json_file)
         self.state = "Susceptible"
+        self.connections = []
         
 
     def change_state(self, state):
@@ -15,7 +17,7 @@ class Node:
     def set_population(self, population):
         self.population = population
 
-    def load_json_file(self, filename):
+    def load(self, filename):
         import json
         try:
             data = json.loads(open(filename).read())
