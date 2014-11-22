@@ -46,17 +46,119 @@
 	},
 	"connections" : [
 		{
-			"Western Area Rural District" : "Moyamba District",
+			"region_a" : "Western Area Urban District",
+			"region_b" : "Western Area Rural District",
 			"weight" : 1
 		},
 		{
-			"Moyamba District" : "Tonkolili District",
+			"region_a" : "Western Area Rural District",
+			"region_b" : "Moyamba District",
 			"weight" : 1
 		},
 		{
-			"Western Area Rural District" : "Moyamba District",
+			"region_a" : "Western Area Rural District",
+			"region_b" : "Port Loko District",
 			"weight" : 1
 		},
-
+		{
+			"region_a" : "Moyamba District",
+			"region_b" : "Tonkolili District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Moyamba District",
+			"region_b" : "Bo District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Moyamba District",
+			"region_b" : "Bonthe District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Port Loko District",
+			"region_b" : "Kambia District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Port Loko District",
+			"region_b" : "Bombali District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Port Loko District",
+			"region_b" : "Tonkolili District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Kambia District",
+			"region_b" : "Bombali District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Bombali District",
+			"region_b" : "Tonkolili District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Bombali District",
+			"region_b" : "Koinadugu District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Tonkolili District",
+			"region_b" : "Koinadugu District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Koinadugu District",
+			"region_b" : "Kono District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Tonkolili District",
+			"region_b" : "Kono District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Tonkolili District",
+			"region_b" : "Bo District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Tonkolili District",
+			"region_b" : "Kenema District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Kono District",
+			"region_b" : "Kailahun District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Kailahun District",
+			"region_b" : "Kenema District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Bo District",
+			"region_b" : "Kenema District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Bo District",
+			"region_b" : "Kenema District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Kenema District",
+			"region_b" : "Pujehun District",
+			"weight" : 1
+		},
+		{
+			"region_a" : "Bonthe District",
+			"region_b" : "Pujehun District",
+			"weight" : 1
+		}
 	]
 }
