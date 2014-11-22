@@ -2,7 +2,10 @@ import numpy as np
 from regionmodel import RegionModel
 
 class CompartmentalModel(RegionModel):
+    num_models = 0
     def __init__(self, population_params, ebola_params, model_params):
+        self.id = CompartmentalModel.num_models
+        CompartmentalModel.num_models += 1
         self.compartments = {i : 0 for i in ['S', 'E', 'I', 'R']}
         natural_mortality_rate = population_params['natural_mortality_rate']
         ebola_mortality_rate = ebola_params['disease_mortality_rate']
@@ -14,7 +17,7 @@ class CompartmentalModel(RegionModel):
         self.disease_deaths = 0
         self.compartments['R'] = int(population_params['natural_ebola_resistance'] * model_params['population_size'])
         self.compartments['S'] = model_params['population_size'] - self.compartments['R']
-        self.compartments['I'] = 5
+        self.compartments['I'] = 14 if self.id == 0 else 0
         self.effective_contact_rate = ebola_params['effective_contact_rate']
 
     def update(self):

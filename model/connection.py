@@ -1,45 +1,26 @@
+import numpy as np
 
 class Connection:
-    def __init__(self, data):
-        self.origin = data[0]
-        self.osm_id = data[1]
-        self.destination = data[2]
+    def __init__(self, origin, destination, weight):
+        self.origin = origin
+        self.destination = destination
+        self.weight = weight
+        self.migrations = {i : 0 for i in ['S', 'E', 'I', 'R']}
+        print(self.weight)
 
-        weight = data[3]
-        if weight == 'unclassified':
-            self.weight = 1
-        elif weight == 'footway':
-            self.weight = 1
-        elif weight == 'service':
-            self.weight = 1
-        elif weight == 'residential':
-            self.weight = 2
-        elif weight == 'path':
-            self.weight = 2
-        elif weight == 'track':
-            self.weight = 3
-        elif weight == 'trunk':
-            self.weight = 3
-        elif weight == 'road':
-            self.weight = 3 
-        elif weight == 'tertiary':
-            self.weight = 4
-        elif weight == 'secondary':
-            self.weight = 5
-        elif weight == 'primary':
-            self.weight = 7
-        else:
-            print('Unrecognized weight "' + weight + '"')
+    def calc_migrations(self, global_migration_rate):
+        for compartment in ['S', 'E', 'I', 'R']:
+            props = [self.weight * global_migration_rate * self.origin.model.compartments[compartment] / self.origin.population_size()]
+            props.append(1 - props[0])
+            self.migrations[compartment] = np.random.multinomial(self.origin.model.compartments[compartment], props, size=1)[0][0]
 
+    def complete_migrations(self):
+        for compartment in ['S', 'E', 'I', 'R']:
+            self.origin.model.compartments[compartment] -= self.migrations[compartment]
+            self.origin.model.compartments[compartment] = max(0, self.origin.model.compartments[compartment])
+            self.destination.model.compartments[compartment] += self.migrations[compartment]
+            self.destination.model.compartments[compartment] = max(0, self.destination.model.compartments[compartment])
 
-def load_road_csv(csv_filename):
-    all_connections = []
-    csv_fh = open(csv_filename, 'r')
-    for line in csv_fh:
-        data = line.strip().split(",")
-        if data[0] and data[1] and data[2] and data[3]:
-            new_conn = Connection(data)
-            all_connections.append(new_conn)
-    return all_connections
-    
+        
+
 

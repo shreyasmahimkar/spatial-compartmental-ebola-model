@@ -1,6 +1,6 @@
 {
 	"name" : "Sierra Leone",
-	"duration" : 100,
+	"duration" : 1,
 	"population_params" : {
 		"natural_mortality_rate" : 0.00003130046,
 		"natural_ebola_resistance" : 0.1
