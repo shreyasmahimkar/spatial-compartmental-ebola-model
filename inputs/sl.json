@@ -1,47 +1,59 @@
 {
 	"name" : "Sierra Leone",
+	"duration" : 100,
+	"population_params" : {
+		"natural_mortality_rate" : 0.00003130046,
+		"natural_ebola_resistance" : 0.1
+	},
+	"ebola_params" : {
+		"effective_contact_rate" : 0.2,
+		"disease_mortality_rate" : 0.001,
+		"mean_latent_period" : 5,
+		"mean_infective_period" : 10,
+		"natural_immunity" : 0.1
+	},
 	"regions" : {
-		"Bombali District" : {
-			"population_size" : 100000
+		"Bombali" : {
+			"population_size" : 494139
 		},
-		"Koinadugu District" : {
-			"population_size" : 100000
+		"Koinadugu" : {
+			"population_size" : 335471
 		},
-		"Port Loko District" : {
-			"population_size" : 100000
+		"Port Loko" : {
+			"population_size" : 557978
 		},
-		"Tonkolili District" : {
-			"population_size" : 100000
+		"Tonkolili" : {
+			"population_size" : 434937
 		},
-		"Kambia District" : {
-			"population_size" : 100000
+		"Kambia" : {
+			"population_size" : 341690
 		},
-		"Kenema District" : {
-			"population_size" : 100000
+		"Kenema" : {
+			"population_size" : 653013
 		},
-		"Kono District" : {
-			"population_size" : 100000
+		"Kono" : {
+			"population_size" : 325003
 		},
-		"Kailahun District" : {
-			"population_size" : 100000
+		"Kailahun" : {
+			"population_size" : 465048
 		},
-		"Bo District" : {
-			"population_size" : 100000
+		"Bo" : {
+			"population_size" : 654142
 		},
-		"Bonthe District" : {
-			"population_size" : 100000
+		"Bonthe" : {
+			"population_size" : 168729
 		},
-		"Pujehun District" : {
-			"population_size" : 100000
+		"Pujehun" : {
+			"population_size" : 335574
 		},
-		"Moyamba District" : {
-			"population_size" : 100000
+		"Moyamba" : {
+			"population_size" : 278119
 		},
-		"Western Area Urban District" : {
-			"population_size" : 100000
+		"Western Area Urban" : {
+			"population_size" : 1040888
 		},
-		"Western Area Rural District" : {
-			"population_size" : 100000
+		"Western Area Rural" : {
+			"population_size" : 263619
 		}
 	},
 	"connections" : [
