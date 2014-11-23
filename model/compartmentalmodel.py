@@ -3,7 +3,7 @@ from regionmodel import RegionModel
 
 class CompartmentalModel(RegionModel):
     num_models = 0
-    def __init__(self, population_params, ebola_params, model_params):
+    def __init__(self, population_params, ebola_params, model_params, first=False):
         self.id = CompartmentalModel.num_models
         CompartmentalModel.num_models += 1
         self.compartments = {i : 0 for i in ['S', 'E', 'I', 'R']}
@@ -17,13 +17,23 @@ class CompartmentalModel(RegionModel):
         self.disease_deaths = 0
         self.compartments['R'] = int(population_params['natural_ebola_resistance'] * model_params['population_size'])
         self.compartments['S'] = model_params['population_size'] - self.compartments['R']
-        self.compartments['I'] = 14 if self.id == 0 else 0
+        self.compartments['I'] = 14 if first else 0
         self.effective_contact_rate = ebola_params['effective_contact_rate']
+        self.birth_rate = population_params['birth_rate']
+        self.natural_resistance = population_params['natural_ebola_resistance']
+
+    def get_total_cases(self):
+        return self.total_cases
 
     def update(self):
         deltas = {i : 0 for i in ['S', 'E', 'I', 'R', 'D']}
 
         self.transitions['S']['E'] = self.effective_contact_rate * self.calc_prevalence()
+
+        births = int(self.birth_rate * self.population_size())
+        resistant_births = int(births * self.natural_resistance)
+        self.compartments['R'] += resistant_births
+        self.compartments['S'] += (births - resistant_births)
 
         for source in self.transitions:
             trans_list = [(i, self.transitions[source][i]) for i in self.transitions[source]]

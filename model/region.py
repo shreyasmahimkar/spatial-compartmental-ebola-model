@@ -3,10 +3,10 @@ from compartmentalmodel import CompartmentalModel
 class Region:
     def __init__(self, name, population_params, ebola_params, region_params):
         self.name = name
-        self.model = CompartmentalModel(population_params, ebola_params, region_params)
+        self.model = CompartmentalModel(population_params, ebola_params, region_params, name == 'Kenema')
 
     def print_state(self):
-        print(self.name, self.model.compartments, self.calc_prevalence(), self.population_size())
+        print(self.name, self.model.compartments, self.population_size(), self.model.get_total_cases(), self.model.disease_deaths)
 
     def update(self):
         self.model.update()

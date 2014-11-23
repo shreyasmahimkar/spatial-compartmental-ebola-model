@@ -1,16 +1,17 @@
 {
 	"name" : "Sierra Leone",
-	"duration" : 1,
+	"duration" : 165,
+	"global_immigration_multiplier" : 0.0001,
 	"population_params" : {
 		"natural_mortality_rate" : 0.00003130046,
-		"natural_ebola_resistance" : 0.1
+		"natural_ebola_resistance" : 0.1,
+		"birth_rate" : 0.00010250
 	},
 	"ebola_params" : {
-		"effective_contact_rate" : 0.2,
-		"disease_mortality_rate" : 0.001,
-		"mean_latent_period" : 5,
-		"mean_infective_period" : 10,
-		"natural_immunity" : 0.1
+		"effective_contact_rate" : 0.229,
+		"disease_mortality_rate" : 0.02595,
+		"mean_latent_period" : 11.4,
+		"mean_infective_period" : 10
 	},
 	"regions" : {
 		"Bombali" : {
@@ -55,122 +56,5 @@
 		"Western Area Rural" : {
 			"population_size" : 263619
 		}
-	},
-	"connections" : [
-		{
-			"region_a" : "Western Area Urban District",
-			"region_b" : "Western Area Rural District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Western Area Rural District",
-			"region_b" : "Moyamba District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Western Area Rural District",
-			"region_b" : "Port Loko District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Moyamba District",
-			"region_b" : "Tonkolili District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Moyamba District",
-			"region_b" : "Bo District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Moyamba District",
-			"region_b" : "Bonthe District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Port Loko District",
-			"region_b" : "Kambia District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Port Loko District",
-			"region_b" : "Bombali District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Port Loko District",
-			"region_b" : "Tonkolili District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Kambia District",
-			"region_b" : "Bombali District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Bombali District",
-			"region_b" : "Tonkolili District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Bombali District",
-			"region_b" : "Koinadugu District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Tonkolili District",
-			"region_b" : "Koinadugu District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Koinadugu District",
-			"region_b" : "Kono District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Tonkolili District",
-			"region_b" : "Kono District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Tonkolili District",
-			"region_b" : "Bo District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Tonkolili District",
-			"region_b" : "Kenema District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Kono District",
-			"region_b" : "Kailahun District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Kailahun District",
-			"region_b" : "Kenema District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Bo District",
-			"region_b" : "Kenema District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Bo District",
-			"region_b" : "Kenema District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Kenema District",
-			"region_b" : "Pujehun District",
-			"weight" : 1
-		},
-		{
-			"region_a" : "Bonthe District",
-			"region_b" : "Pujehun District",
-			"weight" : 1
-		}
-	]
+	}
 }
